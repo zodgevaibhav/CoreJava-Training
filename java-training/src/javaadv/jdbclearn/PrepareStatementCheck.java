@@ -24,7 +24,15 @@ public class PrepareStatementCheck {
 			String userName = p.getProperty("userName");
 			String password= p.getProperty("password");
 			
-		Class.forName("com.mysql.jdbc.Driver");
+
+			//********************** Register driver with DriverManager ******************
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			//System.setProperty("jdbc.drivers", "com.mysql.jdbc.Driver");
+			
+			// java -Djdbc.drivers=com.mysql.jdbc.Driver <<<ClassFileName>>>
+			
+			//*******************************************************************************
 		
 		Connection conn = DriverManager.getConnection(url, userName, password);
 		

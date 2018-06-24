@@ -17,7 +17,17 @@ public class SelectStatementTest {
 		Statement stmt;
 		
 		try {
+			
+			//********************** Register driver with DriverManager ******************
 			Class.forName("com.mysql.jdbc.Driver");
+			
+			//System.setProperty("jdbc.drivers", "com.mysql.jdbc.Driver");
+			
+			// java -Djdbc.drivers=com.mysql.jdbc.Driver <<<ClassFileName>>>
+			
+			//*******************************************************************************
+			
+			
 			System.out.println("Connection driver ...");
 			
 			conn = DriverManager.getConnection(dbUrl,userName,password);

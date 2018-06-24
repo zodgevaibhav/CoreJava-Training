@@ -51,6 +51,8 @@ public class SelectStatementTest {
 				System.out.println(userId);
 			}
 			
+			
+			
 			rs.close();
 			stmt.close();
 			conn.close();

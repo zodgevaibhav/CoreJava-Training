@@ -46,6 +46,10 @@ public class InsertUpdateDeleteStatement {
 		countOfRowUpdated = stmt.executeUpdate("update users set first_name = 'admin' where first_name = 'Vaibhav'");		
 		System.out.println(countOfRowUpdated+" row updated...");
 		
+		System.out.println("**** Previously updated record counts are "+stmt.getUpdateCount());
+		System.out.println("**** Is statement closed -  "+stmt.isClosed());
+
+		
 		stmt.close();
 		conn.close();
 		

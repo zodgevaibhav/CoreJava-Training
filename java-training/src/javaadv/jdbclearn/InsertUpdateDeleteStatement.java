@@ -33,7 +33,8 @@ public class InsertUpdateDeleteStatement {
 		
 		String query = "update users set first_name = 'Vaibhav' where first_name = 'admin'";
 		
-		int countOfRowUpdated = stmt.executeUpdate(query);		
+		//************** One connection can use to execute multiple statements
+		int countOfRowUpdated = stmt.executeUpdate(query);		  
 		System.out.println(countOfRowUpdated+" row updated...");
 		
 		countOfRowUpdated = stmt.executeUpdate("insert into users values ('swara','swara','swara','swara')");		

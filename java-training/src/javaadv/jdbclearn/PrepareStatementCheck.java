@@ -1,19 +1,29 @@
 package javaadv.jdbclearn;
 
+import java.io.FileReader;
+import java.io.Reader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Properties;
 
 public class PrepareStatementCheck {
 
 	public static void main(String[] args) {
 
-		String url = "jdbc:mysql://localhost:3306/advancedjava";
-		String userName = "root";
-		String password= "root";
-		
 		try {
+		
+			FileReader fr = new FileReader("src/javaadv/jdbclearn/db.property");
+			Properties p = new Properties();
+			p.load(fr);	
+			
+			System.out.println(p.getProperty("url"));
+			
+			String url = p.getProperty("url");
+			String userName = p.getProperty("userName");
+			String password= p.getProperty("password");
+			
 		Class.forName("com.mysql.jdbc.Driver");
 		
 		Connection conn = DriverManager.getConnection(url, userName, password);

@@ -13,7 +13,6 @@ public class BasicThread {
 class MyThread extends Thread {
 	String threadId;
 
-	@Override
 	public void run() {
 		for (int i = 0; i <= 10000; i++) {
 			System.out.println("Thread " + threadId + " - " + i);

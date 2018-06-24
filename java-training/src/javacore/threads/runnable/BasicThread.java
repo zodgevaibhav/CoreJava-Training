@@ -30,7 +30,6 @@ public class BasicThread {
 class MyThread implements Runnable {
 	String threadId;
 
-	@Override
 	public void run() {
 		for (int i = 0; i <= 10000; i++) {
 			System.out.println("Thread " + threadId + " - " + i+" Thread active count - "+Thread.getAllStackTraces());
